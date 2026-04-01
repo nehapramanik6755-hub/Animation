@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>April Fool</title>
+  <style>
+    body{
+      background: linear-gradient(to right,#ffecd2,#fcb69f);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+    h1{
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 40px;
+    }
+    #prankButton{
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Do you want a surprise?😏</h1>
+  <button id="prankButton" onmouseover="runAway()" onclick="clicked()">Click Me!</button>
+
+  <script>
+    function runAway(){
+      const btn = document.getElementById('prankButton');
+       if(Math.random()>0.4){
+      const x = Math.random() * (window.innerWidth - 150);
+      const y = Math.random() * (window.innerHeight - 80);
+      btn.style.position = "absolute";
+      btn.style.left = x+ "px";
+      btn.style.top = y + "px";
+      btn.style.transform = `rotate(${Math.random()*60-30}deg);`
+    }
+  }
+    function clicked(){
+      alert("😂 Gotcha! Happy April Fool");
+    }
+  </script>
+</body>
+</html>
